@@ -158,6 +158,12 @@ Al estar ejecutando código, nuestros logs se llenaran con información valiosa 
 // llevan comillas dobles (importante) y siempre abren y cierran
 "hola"
 
+// booleanos
+// representa solo verdadero o falso
+
+true 
+false
+
 // nil
 // Representa ningún valor o nada
 nil
@@ -206,11 +212,41 @@ nil.class
 [3,5.6, "hola"][2].class
 \simbolo.class
 'Simbolo'.class
-
-
-
+true.class
 
 ```
+
+## Variables
+
+Son los contenedores donde podemos almacenar datos que serán consumidos más tarde, esto permite no escribir dos veces el mismo código y tener referencia de cosas con nombres más humanos.
+
+
+```supercollider
+
+// Variables globales, llevan el signo ~ al inicio
+~sonido = {SinOsc.ar(200)!2}
+~sonido.play
+
+~sonido2 = {LFPar.ar(300)!2}
+~sonido2.play
+
+// tambien pueden definirse variables globales usando una sola letra
+a=2
+b=3
+
+a+b
+
+// podemos definir bloques de código usando paréntesis
+// cada linea separada debe terminar con ;
+// para variables locales, es decir que solo existen en el bloque de código, se usa la palabra var nombre;
+// para ejecutar un bloque de código, puede presionarse Control + Enter
+(
+var numeros=[1,2,3,5];
+numeros[3].postln
+)
+
+```
+
 
 
 
