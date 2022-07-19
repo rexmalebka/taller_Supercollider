@@ -83,7 +83,7 @@ Supercollider además cuenta con una suite de Funciones que nos permiten usar MI
 ## Instalación
 
 Para todos los casos Supercollide es libre y gratuito, puede encontrarse en este link https://supercollider.github.io/downloads
-
+En el caso de GNU/Linux, opcionalmente instalar qjackctl para tener un mejor control de las conexiones de salida y entrada
 
 ## Entorno
 
@@ -91,17 +91,127 @@ Para todos los casos Supercollide es libre y gratuito, puede encontrarse en este
 
 Supercollider tiene al menos 3 partes
 
-### Editor
+- Editor
 
 Aqui es donde vamos a escribir el cuerpo de nuestra composición, definiremos el algoritmo de nuestro sonido 
 
-### Buscador de ayuda
+- Buscador de ayuda
 
 Aqui vemos un mini navegador en el que podemos buscar datos rápidos sobre funciones y sintáxis
 
-### Ventana de logs
+- Ventana de logs
 
 Aqui veremos la bitácora de lo que estemos ejecutando, así como logs de errores que puedan ocurrir 
+
+---
+## Haciendo sonido
+
+
+
+```supercollider
+// recuerda antes de ejecutar el código estar usuando audífonos para evitar dañar las bocinas de tu computadora.
+// inicia el servidor y se conecta con el motor de audio
+// para ejecutar código, seleccionas un pedazo de código y presionas Shift + Enter 
+s.boot  
+
+// inisia el meter para ver volúmenes, así como ver un scope de la señal
+s.meter
+s.scope
+
+
+// Corre este snippet y ve lo que sucede
+{SinOsc.ar(300)}.play
+
+// para detener todo los sonidos, presionar Control + "."
+// que pasa si le cambiamos los datos ?
+{SinOsc.ar(500)}.play
+
+// y ahora?
+{[ SinOsc.ar(500), SinOsc.ar(200)]}.play
+
+// probamos con otro tipo de onda ? 
+{[ Saw.ar(500), Saw.ar(200)]}.play
+
+// prueba con combinaciones de Pulse LFTri Saw LFPulse LFPar SinOsc etc;
+```
+
+Al estar ejecutando código, nuestros logs se llenaran con información valiosa en caso de que nos equivoquemos
+
+![image](https://user-images.githubusercontent.com/17996715/179662697-22ad0185-2b07-4609-b7a9-4a409cc54b1f.png)
+
+
+## Tipos de Datos Supercollider
+
+```supercollider
+// Números
+// números enteros (no tienen punto decimal)
+2
+
+// números flotantes (tienen punto decimal)
+2.0
+
+// números con notación científica 
+2e3
+
+
+// texto
+// llevan comillas dobles (importante) y siempre abren y cierran
+"hola"
+
+// nil
+// Representa ningún valor o nada
+nil
+
+// si se quiere usar comilla dentro del string, se us \" para evitar que falle
+"comilla: \" "
+
+// listas 
+// pueden contener cualquier tipo de valor, abre con [ y cierra con ], los elementos van separados por coma
+[1, 3, 4]
+[5.5, 6.7, 7.7]
+["hola", "que onda"]
+
+// podemos acceder a los elementos de la lista indicando entre [x] la posición del valor que queremos extraer, desde el 0 en adelante
+
+[3,6,3,4][0] // 3
+[3,6,3,4][1] // 3
+[3,6,3,4][6] // nil no existe valor en esta posición
+
+
+
+// Events
+// Iguales que las listas pero el índice no es un número
+(a:1, b:2)
+
+// accedemos a los valors con un punto
+(a:2).a
+
+(a:3).f // nil
+
+// Symbols
+// Sirven para etiquetar, se escriben sin separar por espacios iniciando con \, o también con comilla simple
+\hola
+\amp
+'freq'
+
+
+// Ante la duda, siempre podemos saber el tipo de un valor con .class
+
+2.class
+3.4.class
+"Hola".class
+[6,3,4].class
+(a:4,b:3).class
+nil.class
+[3,5.6, "hola"][2].class
+\simbolo.class
+'Simbolo'.class
+
+
+
+
+```
+
 
 
 ### más información 
@@ -111,4 +221,4 @@ Aqui veremos la bitácora de lo que estemos ejecutando, así como logs de errore
 - https://algorave.com/
 - https://github.com/toplap/awesome-livecoding
 - https://docs.google.com/spreadsheets/d/1tLWnX_Dyha0toGC-DQQaS2ICJ-U2U9bmuJOBvXOv59c/edit#gid=0
-- 
+
