@@ -2,8 +2,12 @@
 
 
 1.-[Introducción al livecoding](livecoding_intro.md)
+
 2.-[Introducción a Supercollider](sc_intro.md)
+
 3.-[Tipos de datos](sc_tipo_datos.md)
+
+4.-[Información básica de sonido](basicos_sonido.md)
 
 ---
 

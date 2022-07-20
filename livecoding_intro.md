@@ -1,4 +1,4 @@
-# Introduccion
+# Introduccion al Livecoding
 
  1.-[Inicio ](README.md)
 
@@ -59,7 +59,7 @@ existen múltiples lenguajes que permiten generar sonido en vivo, algunos son:
 - Orca
 
 
-
+---
 
 [![M4l4ndr0n3](https://img.youtube.com/vi/0kBxq0rdTBg/0.jpg)](https://www.youtube.com/watch?v=0kBxq0rdTBg)
 
