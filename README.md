@@ -9,6 +9,8 @@
 
 4.-[Información básica de sonido](basicos_sonido.md)
 
+5.-[sintesis de sonido](sintesis_sonido.md)
+
 ---
 
 

@@ -1,5 +1,10 @@
 # Información Básica de sonido
 
+
+1.-[Inicio ](README.md)
+
+---
+
 ## Características importantes del sonido
 
 El sonido es una señal de energía que viaja através del aire, y como señal mantiene ciertos parámetros que le dan sus características especiales.
